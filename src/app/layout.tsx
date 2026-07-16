@@ -17,8 +17,8 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Agent Change Control",
-    template: "%s · Agent Change Control",
+    default: "Writ",
+    template: "%s · Writ",
   },
   description:
     "A source-aware authorization gateway for changes proposed by autonomous agents.",

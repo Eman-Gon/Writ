@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { OverviewClient } from "./_components/overview-client";
 
 export const metadata: Metadata = {
-  title: { absolute: "Control Center · Agent Change Control" },
+  title: { absolute: "Control Center · Writ" },
   description: "Review source-aware policy decisions for protected agent changes.",
 };
 

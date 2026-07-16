@@ -27,17 +27,16 @@ response = evaluate(proposal, manifest, envelopes, claim=None, mode="external")
 
 ```python
 gateway.broker.configure({"vendor_master": erp_executor, "ap_ledger": ledger_executor})
-effect = gateway.broker.commit(record, mutation)
+effect = gateway.broker.commit(record, mutation, manifest, envelopes, claim=claim)
 ```
 
 - `configure(...)` is called once from demo.py (the composition root). An
   executor is `Callable[[ProposedMutation, DecisionRecord], str]` returning the
   concrete `downstream_effect` string. Executors own the destination
   credentials; nothing else may.
-- `commit` re-runs `evaluate()` immediately before executing (TOCTOU guard),
-  against the context `evaluate()` retained for the proposal in this process.
-  Pass `manifest=`/`envelopes=`/`claim=` only to override that context;
-  committing a proposal that was never evaluated in-process refuses.
+- The caller supplies `manifest` and `envelopes` (and `claim`, keyword-only, if
+  one applies): `commit` re-runs `evaluate()` against them immediately before
+  executing (TOCTOU guard). A revalidation that does not return ALLOW refuses.
 - Duplicate `proposal_id` is a no-op returning the prior effect (at-most-once).
 - Refusals raise `gateway.broker.BrokerRefused`; no business effect occurred.
 

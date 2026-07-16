@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+.coverage
+htmlcov/
 
 # next.js
 /.next/
@@ -19,6 +21,7 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -28,6 +31,9 @@
 .venv/
 __pycache__/
 .pytest_cache/
+*.egg-info/
+.mypy_cache/
+.ruff_cache/
 *.db
 
 # debug
@@ -38,6 +44,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+
+# local integration state and invoice-bearing run logs
+/.writ-gmail-state.json*
+/harness/foreign_agent/runs/
 
 # vercel
 .vercel

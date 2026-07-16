@@ -7,7 +7,7 @@ import { DemoProvider } from "./_components/demo-provider";
 export const metadata: Metadata = {
   title: {
     default: "Control Center",
-    template: "%s · Agent Change Control",
+    template: "%s · Writ",
   },
   description:
     "A source-aware authorization gateway for changes proposed by autonomous agents.",

@@ -4,7 +4,7 @@ import { LockKeyhole, ShieldCheck, ShieldX } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: { absolute: "Policies · Agent Change Control" },
+  title: { absolute: "Policies · Writ" },
   description: "Deterministic source-authority policies for protected business changes.",
 };
 

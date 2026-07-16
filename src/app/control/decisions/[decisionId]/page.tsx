@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: DecisionPageProps): Promise<M
   return {
     title: {
       absolute: demoCase
-        ? `Decision ${demoCase.id} · Agent Change Control`
-        : "Decision not found · Agent Change Control",
+        ? `Decision ${demoCase.id} · Writ`
+        : "Decision not found · Writ",
     },
   };
 }

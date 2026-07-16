@@ -169,13 +169,13 @@ export function ControlShell({ children }: { children: ReactNode }) {
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-72 flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground lg:flex">
         <div className="flex h-20 items-center border-b border-sidebar-border px-6">
           <Link
-            aria-label="Agent Change Control overview"
+            aria-label="Writ overview"
             className="flex items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring focus-visible:ring-offset-4 focus-visible:ring-offset-sidebar"
             href="/control"
           >
             <BrandMark className="size-9 text-sidebar-primary" />
             <span className="text-[0.9375rem] font-semibold tracking-[-0.015em]">
-              Agent Change Control
+              Writ
             </span>
           </Link>
         </div>
@@ -209,7 +209,7 @@ export function ControlShell({ children }: { children: ReactNode }) {
         <header className="sticky top-0 z-30 border-b border-border bg-background/95 backdrop-blur-sm lg:hidden">
           <div className="flex h-16 items-center justify-between gap-4 px-4">
             <Link
-              aria-label="Agent Change Control overview"
+              aria-label="Writ overview"
               className="flex min-w-0 items-center gap-2.5 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               href="/control"
             >

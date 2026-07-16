@@ -7,7 +7,7 @@ import {
 import { evaluateCase, getDemoCase } from "@/lib/change-control/demo";
 
 export const metadata: Metadata = {
-  title: { absolute: "Approvals · Agent Change Control" },
+  title: { absolute: "Approvals · Writ" },
   description: "Review exact-value approvals for protected agent changes.",
 };
 
