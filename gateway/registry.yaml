@@ -1,0 +1,63 @@
+version: registry-v1
+
+# Keyed to EFFECT, not name. vendor.remittance.note is CRITICAL because the
+# mock ERP parses it for routing hints -- it shares effect_equivalence_class
+# "routing" with bank_account, or the semantic-bypass attack works.
+entries:
+  - canonical_field: ap.invoice.amount
+    destination_system: ap_ledger
+    business_effect: record_transaction
+    sensitivity: low
+    effect_equivalence_class: txn
+    aliases: [invoice.amount, amount, invoice_amount, total, invoice.total]
+
+  - canonical_field: ap.invoice.due_date
+    destination_system: ap_ledger
+    business_effect: record_transaction
+    sensitivity: low
+    effect_equivalence_class: txn
+    aliases: [invoice.due_date, due_date, invoice_due_date, payment_due]
+
+  - canonical_field: vendor.profile.address
+    destination_system: vendor_master
+    business_effect: update_vendor_profile
+    sensitivity: medium
+    effect_equivalence_class: profile
+    aliases: [profile.address, address, vendor_address]
+
+  - canonical_field: vendor.remittance.bank_account
+    destination_system: vendor_master
+    business_effect: payment_routing
+    sensitivity: critical
+    effect_equivalence_class: routing
+    aliases:
+      [
+        remittance.bank_account,
+        bank_account,
+        vendor_bank_account,
+        iban,
+        remittance_account,
+        banking_details,
+      ]
+
+  - canonical_field: vendor.remittance.note
+    destination_system: vendor_master
+    business_effect: payment_routing
+    sensitivity: critical
+    effect_equivalence_class: routing
+    aliases:
+      [remittance.note, note, remittance_note, payment_note, memo, payment_memo]
+
+  - canonical_field: memory.descriptive
+    destination_system: agent_memory
+    business_effect: persist_memory_descriptive
+    sensitivity: medium
+    effect_equivalence_class: mem_desc
+    aliases: [descriptive]
+
+  - canonical_field: memory.authoritative
+    destination_system: agent_memory
+    business_effect: persist_memory_authoritative
+    sensitivity: critical
+    effect_equivalence_class: mem_auth
+    aliases: [authoritative]

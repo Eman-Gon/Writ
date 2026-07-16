@@ -1,0 +1,9 @@
+version: policy-v1
+
+# Attested claims below this authentication assurance never authorize a
+# CRITICAL mutation.
+claim_required_authentication: phishing_resistant
+
+# At this sensitivity and above, an AMBIGUOUS artifact or disagreeing parse
+# paths anywhere in the lineage is a DENY, not a warning.
+ambiguity_fail_closed_at: high

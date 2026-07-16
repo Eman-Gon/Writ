@@ -1,0 +1,11 @@
+{
+  "claim_id": "claim_vendor_123_bank_20260716",
+  "claim_type": "vendor_banking_change",
+  "subject": "vendor_123",
+  "canonical_field": "vendor.remittance.bank_account",
+  "value": "GB82 WEST 1234 5698 7654 32",
+  "attested_by": "finance_admin_456",
+  "human_submitted": true,
+  "system_signature": "demo-valid-signature",
+  "source_artifacts": ["invoice_poisoned.pdf"]
+}
